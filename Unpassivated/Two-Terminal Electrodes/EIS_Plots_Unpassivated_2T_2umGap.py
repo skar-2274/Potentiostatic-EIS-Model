@@ -13,7 +13,7 @@ frequencies = np.logspace(6, -1, num=70)
 def impedance(f, R_s, R_ct, C_dl, A_w):
     Z_w = A_w / np.sqrt(1j * 2 * np.pi * f)   # Warburg impedance
     Z_series = R_ct + Z_w                     # Series combination of R_ct and Z_w
-    Z_C = 1j * 2 * np.pi * f * C_dl           # Capacitor Impedance
+    Z_C = 1j * 2 * np.pi * f * C_dl           # Capacitor impedance
     Z_parallel = 1 / ((Z_series ** -1) + Z_C) # Parallel combination with capacitance
     Z_total = R_s + Z_parallel                # Series combination of R_s and parallel part
     return Z_total
